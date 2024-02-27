@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Firma</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body class="w-screen h-screen bg-body">
+    <div id="wrapper-container" class="w-full h-full mx-auto flex place-center">
+      <section class="wrapper">
+        <article class="card">
+          <fondo
+            ondragstart="if (!window.__cfRLUnblockHandlers) return false; return!1"
+            class="w-full h-full absolute z-back"
+          >
+            <img src="assets/wave.png" alt="fondo" class="wave" />
+          </fondo>
+          <header
+            ondragstart="if (!window.__cfRLUnblockHandlers) return false; return!1"
+            onselectstart="if (!window.__cfRLUnblockHandlers) return false; return!1"
+            id="header"
+          >
+            <div id="logo">
+              <img src="assets/logo.svg" alt="logo" class="w-20 h-20" />
+            </div>
+            <div id="photography">
+              <img src="assets/profile.png" alt="profile" class="w-20 h-20" />
+            </div>
+          </header>
+          <main id="main">
+            <div id="name">
+              <h1>Manuel Retamozo G.</h1>
+              <p>Desarrollador Web</p>
+            </div>
+            <div id="description">
+              <p>Tel. 6**973***</p>
+              <p style="cursor: pointer; z-index: 200">
+                <a href="mailto:hello@mretamozo.com">hi@mretamozo.com</a>
+              </p>
+              <p style="cursor: pointer; z-index: 200">
+                <a href="linkedin.com/in/mmretamozo" target="_blank"
+                  >linkedin/mmretamozo</a
+                >
+              </p>
+            </div>
+          </main>
+          <div class="bg"></div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
