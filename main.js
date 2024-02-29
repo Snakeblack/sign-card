@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Función para actualizar el color del texto
   const updateTextColorDescription = (color) => {
     $("#description p").style.color = color;
-    
+
     // cambiar todos los a dentro de los p dentro de description
     const links = document.querySelectorAll("#description p a");
     links.forEach((link) => (link.style.color = color));
@@ -155,16 +155,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const darkLight = $("#dark-light");
 
+  const theme = localStorage.getItem("theme");
+
+  if (!theme) {
+    localStorage.setItem("theme", "dark");
+    body.classList.add("dark");
+    body.classList.remove("light");
+    darkLight.checked = false;
+  } else if (theme === "dark") {
+    darkLight.checked = false;
+    body.classList.add("dark");
+    body.classList.remove("light");
+  } else {
+    darkLight.checked = true;
+    body.classList.add("light");
+    body.classList.remove("dark");
+  }
+
   darkLight.addEventListener("change", (e) => {
     if (e.target.checked) {
       body.classList.remove("dark");
       body.classList.add("light");
+      localStorage.setItem("theme", "light");
     } else {
       body.classList.add("dark");
       body.classList.remove("light");
+      localStorage.setItem("theme", "dark");
     }
   });
-
 
   // Función para coger el div con id="card" que no es canvas y pasarlo a un png y descargarlo con el boton con id="download" usar html2canvas
 
@@ -178,8 +196,4 @@ document.addEventListener("DOMContentLoaded", () => {
   //     link.click();
   //   });
   // });
-
-  
-
-  
 });
