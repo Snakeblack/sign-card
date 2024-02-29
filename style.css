@@ -6,6 +6,23 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
+footer {
+  height: 5rem;
+  padding-block: 2rem;
+  color:#b6b6b662;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;}
+
+#over {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+}
+
 .w-screen {
   width: 100dvw;
 }
@@ -44,6 +61,29 @@
   & .card {
     background-color: #e0e0e088;
   }
+
+
+  & .input-text {
+    background-color: #212121;
+    max-width: 190px;
+    height: 40px;
+    padding: 10px;
+    /* text-align: center; */
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 5px;
+    color: rgba(0, 255, 255, 0.842);
+
+    /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+  }
+  
+  & .input-text:focus {
+    color: rgb(0, 255, 255);
+    background-color: #212121;
+    outline-color: rgb(0, 255, 255);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.473);
+    transition: .1s;
+    transition-property: box-shadow;
+  }
 }
 
 .light {
@@ -65,6 +105,32 @@
   & .card {
     background-color: #1d1c1c88;
   }
+
+  & .input-text {
+    background-color: #e7e7e7;
+    max-width: 190px;
+    height: 40px;
+    padding: 10px;
+    /* text-align: center; */
+    border: 2px solid rgb(61, 61, 61);
+    border-radius: 5px;
+    color: rgba(0, 8, 8, 0.842);
+
+    /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+  }
+  
+  & .input-text:focus {
+    color: rgb(0, 0, 0);
+    background-color: #dbdbdb;
+    outline-color: rgb(0, 3, 3);
+    box-shadow: 0 0 8px rgba(0, 5, 5, 0.473);
+    transition: .1s;
+    transition-property: box-shadow;
+  }
+}
+
+.label-text {
+  width: 5rem;
 }
 
 .flex {
@@ -76,7 +142,7 @@
 }
 
 .gap-form {
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .gap-4 {
@@ -111,6 +177,7 @@
 .wrapper {
   perspective: 800px;
   z-index: 500;
+  padding-inline: 2rem;
 }
 
 #header {
@@ -139,6 +206,7 @@
   border-radius: 2rem;
   outline: 0.15rem solid #ebebebd2;
   aspect-ratio: 8/3;
+  max-width: 100%;
 }
 
 #logo {
@@ -227,10 +295,11 @@
   font-family: "Caveat", cursive;
   font-weight: 600;
   padding-bottom: 0.5rem;
+  padding-top: 3rem;
 }
 
 #formulario-reactivo {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -240,18 +309,18 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid rgb(1, 235, 252);
+  border: 2px solid #fffd;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  box-shadow: 0px 0px 5px rgb(1, 235, 252), inset 0px 0px 2px rgb(1, 235, 252),
+  box-shadow: 0px 0px 5px #fffd, inset 0px 0px 2px #fffd,
     0px 0px 3px rgb(255, 255, 255);
   animation: flicker 2s linear infinite;
 }
 
 .icon {
-  color: rgb(1, 235, 252);
+  color: #fffd;
   font-size: 2rem;
   cursor: pointer;
   animation: iconflicker 2s linear infinite;
@@ -265,6 +334,8 @@
   z-index: 500;
   cursor: pointer !important;
 }
+
+
 
 .switch {
   --input-focus: #2d8cf0;
@@ -334,11 +405,53 @@
   padding: 20px;
 }
 
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 800;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+
 @keyframes flicker {
   0% {
-    border: 2px solid rgb(1, 235, 252);
-    box-shadow: 0px 0px 20px rgb(1, 235, 252),
-      inset 0px 0px 10px rgb(1, 235, 252), 0px 0px 5px rgb(255, 255, 255);
+    border: 2px solid #fffd;
+    box-shadow: 0px 0px 20px #fffd,
+      inset 0px 0px 10px #fffd, 0px 0px 5px rgb(255, 255, 255);
   }
 
   5% {
@@ -347,9 +460,9 @@
   }
 
   10% {
-    border: 2px solid rgb(1, 235, 252);
-    box-shadow: 0px 0px 20px rgb(1, 235, 252),
-      inset 0px 0px 10px rgb(1, 235, 252), 0px 0px 5px rgb(255, 255, 255);
+    border: 2px solid #fffd;
+    box-shadow: 0px 0px 20px #fffd,
+      inset 0px 0px 10px #fffd, 0px 0px 5px rgb(255, 255, 255);
   }
 
   25% {
@@ -358,15 +471,15 @@
   }
 
   30% {
-    border: 2px solid rgb(1, 235, 252);
-    box-shadow: 0px 0px 20px rgb(1, 235, 252),
-      inset 0px 0px 10px rgb(1, 235, 252), 0px 0px 5px rgb(255, 255, 255);
+    border: 2px solid #fffd;
+    box-shadow: 0px 0px 20px #fffd,
+      inset 0px 0px 10px #fffd, 0px 0px 5px rgb(255, 255, 255);
   }
 
   100% {
-    border: 2px solid rgb(1, 235, 252);
-    box-shadow: 0px 0px 20px rgb(1, 235, 252),
-      inset 0px 0px 10px rgb(1, 235, 252), 0px 0px 5px rgb(255, 255, 255);
+    border: 2px solid #fffd;
+    box-shadow: 0px 0px 20px #fffd,
+      inset 0px 0px 10px #fffd, 0px 0px 5px rgb(255, 255, 255);
   }
 }
 
@@ -393,5 +506,70 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+/* mediaquery range menor que 624px */
+
+@media (width < 710px) {
+  .card {
+    width: 39rem;
+  }
+}
+
+@media (width < 690px) {
+  .wrapper {
+    zoom: 80%;
+  }
+
+  #formulario-reactivo {
+    zoom: 90%;
+  }
+
+  .titulo {
+    zoom: 95%;
+  }
+
+  .card {
+    width: unset;
+  }
+}
+
+@media (width < 615px) {
+  .wrapper {
+    zoom: 60%;
+  }
+
+  #formulario-reactivo {
+    zoom: 80%;
+  }
+
+  .titulo {
+    zoom: 70%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card {
+    width: unset;
+  }
+}
+
+@media (width < 460px) {
+  .wrapper {
+    zoom: 50%;
+  }
+
+  #formulario-reactivo {
+    zoom: 70%;
+  }
+
+  .titulo {
+    zoom: 60%;
+  }
+
+  .card {
+    width: unset;
   }
 }

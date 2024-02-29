@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const colorPickerBackground = $("#color-picker--background");
   const colorPickerNombre = $("#color-picker--texto-nombre");
   const colorPickerDescripcion = $("#color-picker--texto-descripcio");
+  const donwloader = $("#download");
 
   const bg = $(".bg");
 
@@ -34,6 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
     card.style.transform = `rotateX(0deg) rotateY(0deg)`;
   });
 
+  // donwloader.addEventListener("click", () => {
+  //   card.style.transition = none;
+  //   card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  // });
+
   // Función para actualizar el color del fondo del card
   const updateBackgroundColor = (color1, color2) => {
     console.log({ "color-normal": color1, "color-claro": color2 });
@@ -42,9 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Función para obtener un color más claro basado en el color seleccionado
   const getLighterColor = (color) => {
-    // Puedes implementar lógica para obtener un color más claro aquí
-    // Por ejemplo, puedes usar librerías como tinycolor2 (https://github.com/bgrins/TinyColor) para manipulación de colores.
-    // En este ejemplo, simplemente agregamos opacidad para hacerlo más claro.
     const lighterColor = color + "90"; // Agrega opacidad al color
     return lighterColor;
   };
@@ -85,6 +88,51 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTextColorDescription(textColor);
   });
 
+  // Función para recoger el nombre del input con id="input-text--nombre-card" y pasarlo al h1 con id="text-name"
+
+  const inputTextNombreCard = $("#input-text--nombre-card");
+  const textName = $("#text-name");
+
+  inputTextNombreCard.addEventListener("input", (e) => {
+    textName.textContent = e.target.value;
+  });
+
+  // Función para recoger la descripción del textarea con id="input-text--cargo-card" y pasarlo al p con id="text-cargo"
+
+  const inputTextCargo = $("#input-text--cargo-card");
+  const textCargo = $("#text-cargo");
+
+  inputTextCargo.addEventListener("input", (e) => {
+    textCargo.textContent = e.target.value;
+  });
+
+  // Función para recoger el nombre del input con id="input-text--telefono-card" y pasarlo al h1 con id="text-telefono"
+
+  const inputTextTelefono = $("#input-text--telefono-card");
+  const textTelefono = $("#text-telefono");
+
+  inputTextTelefono.addEventListener("input", (e) => {
+    textTelefono.textContent = e.target.value;
+  });
+
+  // Función para recoger el nombre del input con id="input-text--email-card" y pasarlo al h1 con id="text-email"
+
+  const inputTextEmail = $("#input-text--email-card");
+  const textEmail = $("#text-email");
+
+  inputTextEmail.addEventListener("input", (e) => {
+    textEmail.textContent = e.target.value;
+  });
+
+  // Función para recoger el nombre del input con id="input-text--linkedin-card" y pasarlo al h1 con id="text-linkedin"
+
+  const inputTextLinkedin = $("#input-text--linkedin-card");
+  const textLinkedin = $("#text-linkedin");
+
+  inputTextLinkedin.addEventListener("input", (e) => {
+    textLinkedin.textContent = e.target.value;
+  });
+
   // Función para coger la imagen pasara al input file con id="input-file--imagen" al img con id="photo"
 
   const inputFile = $("#input-file--imagen");
@@ -117,4 +165,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+  // Función para coger el div con id="card" que no es canvas y pasarlo a un png y descargarlo con el boton con id="download" usar html2canvas
+
+  // const download = $("#download");
+
+  // download.addEventListener("click", () => {
+  //   html2canvas(card).then((canvas) => {
+  //     const link = document.createElement("a");
+  //     link.download = "card.png";
+  //     link.href = canvas.toDataURL("image/png");
+  //     link.click();
+  //   });
+  // });
+
+  
+
+  
 });
