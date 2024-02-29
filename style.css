@@ -41,6 +41,9 @@
   ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   --bg-color: #eeeeee !important;
+  & .card {
+    background-color: #e0e0e088;
+  }
 }
 
 .light {
@@ -58,6 +61,10 @@
 
   color: #222;
   --bg-color: #222;
+
+  & .card {
+    background-color: #1d1c1c88;
+  }
 }
 
 .flex {
@@ -130,7 +137,7 @@
   position: relative;
   width: 40rem;
   border-radius: 2rem;
-  outline: 0.15rem solid #a0a0a0;
+  outline: 0.15rem solid #ebebebd2;
   aspect-ratio: 8/3;
 }
 

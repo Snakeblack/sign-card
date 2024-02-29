@@ -109,11 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   darkLight.addEventListener("change", (e) => {
     if (e.target.checked) {
-      body.classList.add("dark");
-      body.classList.remove("light");
-    } else {
       body.classList.remove("dark");
       body.classList.add("light");
+    } else {
+      body.classList.add("dark");
+      body.classList.remove("light");
     }
   });
 
